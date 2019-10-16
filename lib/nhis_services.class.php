@@ -111,7 +111,7 @@
 					$resfx = $dbfx->query ("SELECT * FROM tbl_custom_ip WHERE org_id = '" . $this->c . "'");
 					if ( count ( $resfx ) ) { /* Check fixed ip by id */
 						$this->result['data']['id'] = $this->c;
-						$this->result['data']['ip'] = $resfx['fix_ip'];
+						$this->result['data']['ip'] = $resfx[0]['fix_ip'];
 						$this->result['data']['note'] = "Fixed ip address";
 					} else /* Fixed ip address not found, But id founded in main system */
 						$this->result['data']['result'] = "DHCP";
